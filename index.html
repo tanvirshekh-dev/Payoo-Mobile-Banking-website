@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Payoo-Mobile-Banking-website</title>
-</head>
-<body>
-    
-</body>
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- daisy ui cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <section class="bg-[#f4f5f7] flex flex-col justify-center items-center h-[100vh]">
+        <div class="w-[300px] h-[120px] bg-cover bg-[url(./assets/bg.png)] flex justify-center items-center">
+            <img src="./assets/Group.png" alt="Logo">
+        </div>
+
+      <div>
+        <form class="bg-white p-8 rounded-xl w-[350px]"> 
+          <label for="number" class="font-semibold">Mobile Number</label><br />
+          <input
+          class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+            type="number"
+            name=""
+            id="mobile-number"
+            placeholder="Enter your number"
+          /><br />
+
+          <label for="number" class="font-semibold">4 Digit Pin</label><br />
+          <input
+          class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3"
+            type="number"
+            name=""
+            id="pin-number"
+            placeholder="Enter 4 Digit Pin"
+          /><br />
+
+          <button type="button" id="btn-login" class="bg-[#0874F2] mt-4 rounded-3xl w-full py-2 text-white font-semibold cursor-pointer">Login</button>
+
+        </form>
+      </div>
+    </section>
+
+    <script src="js/login.js"></script>
+  </body>
 </html>
