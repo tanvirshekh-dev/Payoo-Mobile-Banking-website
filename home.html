@@ -11,7 +11,7 @@
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
       rel="stylesheet"
       type="text/css"
-    />
+    />    
     <!-- font awesome cdn  -->
     <link
       rel="stylesheet"
@@ -20,16 +20,33 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- custom color use to button add or remove background and border color -->
+     <style>
+      .btn-background-color{
+        background-color: #f3f8fe;
+      }
+      .btn-border-blue{
+        border: 2px solid #0874F2;
+      }
+      .btn-border-gray{
+        border: 2px solid #e6e6e6;
+      }
+      .display-none{
+        display: none;
+      }
+     </style>
   </head>
   <body class="bg-[#f4f5f7]">
-    <section class="bg-white rounded-b-2xl">
+    <section class="rounded-b-2xl">
       <div
-        class="min-h-[50px] flex items-center justify-between p-3 max-w-lg mx-auto border-b-1 border-gray-400"
+        class="min-h-[50px] flex items-center justify-between p-3 max-w-lg mx-auto border-b-1 border-gray-400 bg-white"
       >
         <nav class="flex">
           <img src="./assets/Group.png" alt="" />
           <div class="ml-3 space-y-1">
-            <h3 class="font-bold text-2xl">$<span id="available-balance">45000</span></h3>
+            <h3 class="font-bold text-2xl">
+              $<span id="available-balance">45000</span>
+            </h3>
             <p class="text-gray-500 font-normal">Available Balance</p>
           </div>
         </nav>
@@ -41,7 +58,7 @@
         </button>
       </div>
 
-      <div class="flex items-start justify-start max-w-lg mx-auto flex-col p-3">
+      <div class="flex items-start justify-start max-w-lg mx-auto flex-col p-3 bg-white">
         <h1 class="text-2xl font-bold mt-8">
           <i class="fa-solid fa-fire text-orange-500"></i> Welcome to Payooo!
         </h1>
@@ -51,9 +68,10 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-3 max-w-lg mx-auto gap-5 p-3">
-        <div id="add-mony"
-          class="card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
+      <div class="grid grid-cols-3 max-w-lg mx-auto gap-5 p-3 rounded-b-xl bg-white">
+        <div
+          id="add-mony"
+          class="form-btn btn-background-color btn-border-blue card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
         >
           <img
             src="assets/wallet1.png"
@@ -63,19 +81,21 @@
           <h2 class="text-base font-semibold text-center">Add Money</h2>
         </div>
 
-        <div id="cash-out"
-          class="card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
+        <div
+          id="cash-out"
+          class="form-btn card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
         >
           <img
             src="assets/send1.png"
             alt="Shoes"
             class="rounded-xl w-10 mb-2"
           />
-          <h2 class="text-base font-semibold">Cashout</h2>
+          <h2 class="text-base font-semibold">CashOut</h2>
         </div>
 
         <div
-          class="card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
+        id="transfer-mony"
+          class="form-btn card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
         >
           <img
             src="assets/money1.png"
@@ -86,7 +106,8 @@
         </div>
 
         <div
-          class="card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
+          id="get-bonus"
+          class="form-btn card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
         >
           <img
             src="assets/bonus1.png"
@@ -97,7 +118,8 @@
         </div>
 
         <div
-          class="card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
+        id="pay-bill"
+          class="form-btn card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
         >
           <img
             src="assets/purse1.png"
@@ -108,7 +130,8 @@
         </div>
 
         <div
-          class="card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
+        id="transaction"
+          class="form-btn card bg-base-100 flex justify-center items-center border-1 border-gray-400 rounded-xl p-5"
         >
           <img
             src="assets/transaction1.png"
@@ -122,20 +145,26 @@
 
     <section class="max-w-lg mx-auto p-6">
       <!-- add mony -->
-      <div id="add-mony-container" class="bg-[#f4f5f7]">
+      <div class="form" id="add-mony-container" class="bg-[#f4f5f7]">
         <h3 class="font-semibold text-xl mb-4">Add Mony</h3>
 
         <form class="bg-white p-8 rounded-xl w-full">
           <label for="number" class="font-semibold">Select A Bank</label><br />
-          <select name="" id="bank-name" class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5">
+          <select
+            name=""
+            id="bank-name"
+            class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+          >
             <option disabled selected>Select bank</option>
             <option>Sonali bank</option>
             <option>Dutch bangla bank</option>
             <option>Rupali bank</option>
             <option>National bank</option>
-          </select> <br />
+          </select>
+          <br />
 
-          <label for="number" class="font-semibold">Bank Account Number</label><br />
+          <label for="number" class="font-semibold">Bank Account Number</label
+          ><br />
           <input
             class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
             type="number"
@@ -153,7 +182,7 @@
             placeholder="Add Amount to withdraw"
           /><br />
 
-           <label for="number" class="font-semibold">Pin Number</label><br />
+          <label for="number" class="font-semibold">Pin Number</label><br />
           <input
             class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
             type="number"
@@ -173,7 +202,7 @@
       </div>
 
       <!-- cash out -->
-       <div id="cash-out-container" class="bg-[#f4f5f7] hidden">
+      <div class="form" id="cash-out-container" class="bg-[#f4f5f7] display-none">
         <h3 class="font-semibold text-xl mb-4">Cash Out</h3>
 
         <form class="bg-white p-8 rounded-xl w-full">
@@ -195,12 +224,12 @@
             placeholder="Enter amount to withdraw"
           /><br />
 
-           <label for="number" class="font-semibold">Pin Number</label><br />
+          <label for="number" class="font-semibold">Pin Number</label><br />
           <input
             class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
             type="number"
             name=""
-            id="pin-number"
+            id="pin-number-value"
             placeholder="Enter 4 digit pin number"
           /><br />
 
@@ -213,6 +242,34 @@
           </button>
         </form>
       </div>
+
+      <!-- transfer mony -->
+      <div class="form" id="transfer-mony-container" class="bg-[#f4f5f7] display-none">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold text-xl mb-4">Transfer Mony</h3>
+          <h4 class="text-base font-medium">View All</h4>
+        </div>
+      </div>
+      <!-- get bonus -->
+      <div class="form" id="get-bonus-container" class="bg-[#f4f5f7] display-none">
+        <h3 class="font-semibold text-xl mb-4">Get Bonus</h3>
+      </div>
+      <!-- pay bill -->
+      <div class="form" id="pay-bill-container" class="bg-[#f4f5f7] display-none">
+        <h3 class="font-semibold text-xl mb-4">Pay Bill</h3>
+      </div>
+      <!-- transaction -->
+      <div class="form" id="transaction-container" class="bg-[#f4f5f7] display-none">
+        <div class="flex items-center justify-between">
+          <h3 class="font-semibold text-xl">Transfer Mony</h3>
+          <h4 class="text-base font-medium text-gray-400">View All</h4>
+        </div>
+
+        <div id="transaction-container-history-box" class="flex-col">
+          
+        </div>
+      </div>
+
     </section>
 
     <script src="js/home.js"></script>
