@@ -229,13 +229,13 @@
             class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
             type="number"
             name=""
-            id="pin-number-value"
+            id="cash-out-pin"
             placeholder="Enter 4 digit pin number"
           /><br />
 
           <button
             type="button"
-            id="btn-withdraw-mony"
+            id="btn-cash-out"
             class="bg-[#0874F2] mt-4 rounded-3xl w-full py-2 text-white font-semibold cursor-pointer"
           >
             Withdraw Money
@@ -245,9 +245,44 @@
 
       <!-- transfer mony -->
       <div class="form" id="transfer-mony-container" class="bg-[#f4f5f7] display-none">
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col items-start justify-between">
           <h3 class="font-semibold text-xl mb-4">Transfer Mony</h3>
-          <h4 class="text-base font-medium">View All</h4>
+          <form class="bg-white p-8 rounded-xl w-full">
+          <label for="number" class="font-semibold">User Account Number</label><br />
+          <input
+            class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+            type="number"
+            name=""
+            id="transfer-account-number"
+            placeholder="Enter 11 digit account number"
+          /><br />
+
+          <label for="number" class="font-semibold">Amount</label><br />
+          <input
+            class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+            type="number"
+            name=""
+            id="transfer-amount"
+            placeholder="Enter amount to withdraw"
+          /><br />
+
+          <label for="number" class="font-semibold">Pin Number</label><br />
+          <input
+            class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+            type="number"
+            name=""
+            id="transfer-pin-number"
+            placeholder="Enter 4 digit pin number"
+          /><br />
+
+          <button
+            type="button"
+            id="btn-transfer-mony"
+            class="bg-[#0874F2] mt-4 rounded-3xl w-full py-2 text-white font-semibold cursor-pointer"
+          >
+            Send Now
+          </button>
+        </form>
         </div>
       </div>
       <!-- get bonus -->

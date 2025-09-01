@@ -1,3 +1,4 @@
+const validPin = 1234;
 const transactionHistory = [];
 // functions to get input values
 function getInputValueNumber(id) {
@@ -55,7 +56,6 @@ function handleToggleButton(id) {
 }
 
 // add mony
-const validPin = 1234;
 
 document
   .getElementById("btn-add-mony")
@@ -106,50 +106,75 @@ document
   });
 
 // cash Out mony feature
-document
-  .getElementById("btn-withdraw-mony")
+document.getElementById("btn-cash-out")
   .addEventListener("click", function (even) {
     even.preventDefault();
-
-    const agentNumber = getInputValueNumber('agent-number')
+    
+    const agentNumber = getInputValueNumber("agent-number")
     const withdrawAmount = parseInt(
       document.getElementById("withdraw-amount").value
     );
-    const pinNumber = getInputValueNumber('pin-number-value')
-     
+    const cashOutPin = getInputValueNumber("cash-out-pin")
+    
     const availableBalance = getInnerText('available-balance')
+
     if (withdrawAmount <= 0 || withdrawAmount > availableBalance) {
       alert("Invalid amount");
       return;
     }
-
-    const validPinNumber = 1234;
-    if (agentNumber.toString().length < 11) {
+    if (agentNumber.length < 11) {
       alert("Please enter a valid agent number");
       return;
     }
-    if (pinNumber != validPinNumber) {
+    if (cashOutPin !== validPin) {
       alert("Please enter a valid pin number");
       return;
     }
-
-    const totalWithdrawAmount = availableBalance - withdrawAmount;
-    setInnerText(totalWithdrawAmount);
-
-     const data = {
+    const cashOutMony = availableBalance - withdrawAmount;
+    setInnerText(cashOutMony);
+    
+    const data = {
       name: "Cash Out",
       date: new Date().toLocaleTimeString(),
     }
     transactionHistory.push(data);
     console.log(transactionHistory);
-  });
+})
 
 
+// Transfer mony feature
+document.getElementById("btn-transfer-mony")
+  .addEventListener("click", function (even) {
+    even.preventDefault();
+    
+    const transferAccountNumber = getInputValueNumber("transfer-account-number");
+    const transferAmount = parseInt(document.getElementById("transfer-amount").value)
+    const transferPinNumber = getInputValueNumber("transfer-pin-number");
 
+    const availableBalance = getInnerText('available-balance')
 
-
-
-
+    if (transferAmount <= 0 || transferAmount > availableBalance) {
+      alert("Invalid amount");
+      return;
+    }
+    if (transferAccountNumber.length < 11) {
+      alert("Please enter a valid agent number");
+      return;
+    }
+    if (transferPinNumber !== validPin) {
+      alert("Please enter a valid pin number");
+      return;
+    }
+    const totalTransferMony = availableBalance - transferAmount;
+    setInnerText(totalTransferMony)
+    
+    const data = {
+      name: "Transfer Mony",
+      date: new Date().toLocaleTimeString(),
+    }
+    transactionHistory.push(data);
+    console.log(transactionHistory);
+})
 
 
 
