@@ -232,7 +232,13 @@ document.getElementById("btn-pay-mony")
     console.log(transactionHistory);
 })
 
-
+// log out btn redirect
+document.getElementById("log-out")
+  .addEventListener("click", function (even) {
+    even.preventDefault()
+    window.location.href = "./index.html"
+    
+})
 
 
 
