@@ -309,9 +309,64 @@
         </form>
         </div>
       </div>
+
       <!-- pay bill -->
-      <div class="form" id="pay-bill-container" class="bg-[#f4f5f7] display-none">
+       <div class="form" id="pay-bill-container" class="bg-[#f4f5f7]">
         <h3 class="font-semibold text-xl mb-4">Pay Bill</h3>
+
+        <form class="bg-white p-8 rounded-xl w-full">
+          <label for="number" class="font-semibold">Select To Pay</label><br />
+          <select
+            name=""
+            id="bill-name"
+            class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+          >
+            <option disabled selected>Select Back</option>
+            <option>Current Bill</option>
+            <option>Electric Bill</option>
+            <option>Gas Bill</option>
+            <option>Internet Bill</option>
+            <option>Water Bill</option>
+            <option>Education Fess</option>
+          </select>
+          <br />
+
+          <label for="number" class="font-semibold">Biller Account Number</label
+          ><br />
+          <input
+            class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+            type="number"
+            name=""
+            id="bill-account-number"
+            placeholder="Enter account number"
+          /><br />
+
+          <label for="number" class="font-semibold">Amount to Pay</label><br />
+          <input
+            class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+            type="number"
+            name=""
+            id="add-pay-amount"
+            placeholder="Add Amount to Pay"
+          /><br />
+
+          <label for="number" class="font-semibold">Pin Number</label><br />
+          <input
+            class="w-full border-none bg-[#f4f5f7] p-3 rounded-3xl mt-3 mb-5"
+            type="number"
+            name=""
+            id="pay-amount-pin-number"
+            placeholder="Enter 4 digit pin number"
+          /><br />
+
+          <button
+            type="button"
+            id="btn-pay-mony"
+            class="bg-[#0874F2] mt-4 rounded-3xl w-full py-2 text-white font-semibold cursor-pointer"
+          >
+            Pay Now
+          </button>
+        </form>
       </div>
       <!-- transaction -->
       <div class="form" id="transaction-container" class="bg-[#f4f5f7] display-none">

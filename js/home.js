@@ -197,6 +197,40 @@ document.getElementById("btn-get-bonus")
     console.log(transactionHistory);
 })
 
+// Pay amount feature
+document.getElementById("btn-pay-mony")
+  .addEventListener("click", function (even) {
+    even.preventDefault()
+    const payBill = getInputValueNumber("bill-name");
+    const billerAccountNumber = getInputValueNumber("bill-account-number")
+    const addPayAmount = parseInt(document.getElementById("add-pay-amount").value)
+    const payAmountPinNumber = getInputValueNumber("pay-amount-pin-number");
+
+    const availableBalance = getInnerText('available-balance')
+
+    if (addPayAmount <= 0 || addPayAmount > availableBalance) {
+      alert("Invalid amount");
+      return;
+    }
+    if (billerAccountNumber.toString().length < 11) {
+      alert("Please enter a valid biller account number")
+      return;
+    }
+    if (payAmountPinNumber !== validPin) {
+      alert("Please enter a valid pin number")
+      return;
+    }
+    const payBillAmount = availableBalance - addPayAmount;
+    setInnerText(payBillAmount)
+    
+
+    const data = {
+      name: "Pay Bill",
+      date: new Date().toLocaleTimeString(),
+    }
+    transactionHistory.push(data);
+    console.log(transactionHistory);
+})
 
 
 
