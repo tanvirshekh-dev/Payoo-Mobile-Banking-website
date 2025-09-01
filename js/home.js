@@ -1,5 +1,7 @@
 const validPin = 1234;
 const transactionHistory = [];
+let validCoupon = "PAYOO123";
+let addCouponMony = 50;
 // functions to get input values
 function getInputValueNumber(id) {
   const inputField = document.getElementById(id);
@@ -175,6 +177,33 @@ document.getElementById("btn-transfer-mony")
     transactionHistory.push(data);
     console.log(transactionHistory);
 })
+
+// get bonus feature
+document.getElementById("btn-get-bonus")
+  .addEventListener("click", function (even) {
+    even.preventDefault();
+    const couponInput = document.getElementById("coupon-number").value;
+    if (couponInput === validCoupon) {
+      const availableBalance = getInnerText('available-balance')
+      let addCouponMony = availableBalance + 50;
+      setInnerText(addCouponMony)
+    }
+
+    const data = {
+      name: "Bonus Mony",
+      date: new Date().toLocaleTimeString(),
+    }
+    transactionHistory.push(data);
+    console.log(transactionHistory);
+})
+
+
+
+
+
+
+
+
 
 
 
